@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Ad Accelerator",
+  "version": "1.0.1",
+  "description": "YouTubeの広告を自動で検知して16倍速で早送りし、ミュートにします。スキップボタンも自動でクリックします。",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
